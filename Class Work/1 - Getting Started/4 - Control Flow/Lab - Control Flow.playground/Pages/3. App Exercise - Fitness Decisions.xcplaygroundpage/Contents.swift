@@ -9,8 +9,7 @@ var steps = 1_000
 let stepGoal = 10_000
 if steps <= stepGoal / 2 {
     print("You're almost halfway there")
-}
-else if steps >= stepGoal / 2 {
+} else if steps >= stepGoal / 2 {
     print("your half way there")
 }
 
@@ -18,11 +17,9 @@ else if steps >= stepGoal / 2 {
 
 if steps <= stepGoal / 10 {
     print("Way to get a good start today")
-}
-else if steps >= stepGoal / 2 {
+} else if steps >= stepGoal / 2 {
     print("your almost half way there")
-}
-else {
+} else {
     print("You're over halfway there!")
 }
 
