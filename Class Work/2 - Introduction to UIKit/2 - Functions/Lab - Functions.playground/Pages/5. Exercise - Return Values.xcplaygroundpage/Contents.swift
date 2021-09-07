@@ -10,9 +10,9 @@ func greeting(_ name: String ) -> String {
 }
 greeting("Jonas")
 //:  Write a function that takes two `Int` arguments, and returns an `Int`. The function should multiply the two arguments, add 2, then return the result. Use the function and print the result.
-func multiplication(_ num1: Int, _ num2: Int){
+func multiplication(_ num1: Int, _ num2: Int) -> Int {
     print(num1 * num2)
-    return num1 ; num2
+    return num1 * num2
     
 }
 multiplication(3, 4)

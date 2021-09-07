@@ -3,7 +3,7 @@
 
  Write a function called `introduceMyself` that prints a brief introduction of yourself. Call the function and observe the printout.
  */
-func introduceMyself(name: String, age: Int){
+func introduceMyself(name: String, age: Int) {
     print("Hello my name is \(name) I am \(age) years old")
     
 }

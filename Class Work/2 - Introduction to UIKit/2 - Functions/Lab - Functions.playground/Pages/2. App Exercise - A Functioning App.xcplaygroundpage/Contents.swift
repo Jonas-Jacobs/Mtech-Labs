@@ -15,7 +15,7 @@ func incrementSteps (steps: Int){
 incrementSteps(steps: 420)
 //:  Similarly, if you want to regularly provide progress updates to your user, you can put your control flow statements that check on progress into a function. Write a function called `progressUpdate` after the declaration of `goal` below. The function should print "You're off to a good start." if `steps` is less than 10% of `goal`, "You're almost halfway there!" if `steps` is less than half of `goal`, "You're over halfway there!" if `steps` is less than 90% of `goal`, "You're almost there!" if `steps` is less than `goal`, and "You beat your goal!" otherwise. Call the function and observe the printout.
 let goal:Double = 10000
-func progressUpdate (goal: Double , steps: Double){
+func progressUpdate(goal: Double , steps: Double){
 if steps <= goal * 0.5 {
         print("Your off to a good start")
 } else if (steps <= goal * 0.1) {
