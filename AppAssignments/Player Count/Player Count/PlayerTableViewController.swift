@@ -9,11 +9,22 @@ import UIKit
 
 class PlayerTableViewController: UITableViewController {
 
-    var persons: [Person] = []
+    var persons: [Person] = [] {
+        didSet {
+            Person.saveToFile(persons: persons)
+        }
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        persons = Person.loadFromFile()
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        updateScore()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +59,7 @@ class PlayerTableViewController: UITableViewController {
         } else {
             persons.append(person)
         }
-        
+        tableView.reloadData()
     }
     
     @IBSegueAction func editPerson(_ coder: NSCoder, sender: Any?) -> IntroductionScreen? {

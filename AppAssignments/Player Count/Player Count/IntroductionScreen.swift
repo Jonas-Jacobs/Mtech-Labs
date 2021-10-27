@@ -46,8 +46,7 @@ class IntroductionScreen: UIViewController {
         person = Person(name: name, score: score)
         
         performSegue(withIdentifier: "PlayerCell", sender: self)
-        
     }
-    
+
 }
 

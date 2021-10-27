@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Person {
+class Person: Codable {
     
     init(name: String, score: Int) {
     self.score = score
@@ -16,4 +16,23 @@ class Person {
     
     var name: String
     var score: Int
+    
+    static let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+
+    static let archiveURL = documentDirectory.appendingPathComponent("Documents").appendingPathExtension("players.plist")
+
+    static func saveToFile(persons: [Person]) {
+        let propertyListEncoder = PropertyListEncoder()
+        let encodedEmojis = try? propertyListEncoder.encode(persons)
+        try? encodedEmojis?.write(to: archiveURL, options: .noFileProtection)
+    }
+
+    static func loadFromFile() -> [Person] {
+        let propertyListDecoder = PropertyListDecoder()
+        if let retrevedEmojisData = try? Data(contentsOf: archiveURL),
+           let decodedEmojis = try? propertyListDecoder.decode(Array<Person>.self, from: retrevedEmojisData){
+            return decodedEmojis
+        }
+        return []
+    }
 }
